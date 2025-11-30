@@ -1,0 +1,22 @@
+
+body, .bg-dark {
+  background-color: #0A0F0D; /* Changing to dark-blue */
+}
+
+.bg-light, .product-detail, .btn-outline-linear, .pattern-circle .pattern-overlay, .footer-item, .footer-menu a {
+  background-color: #000000; /* Changing to black */
+  color: #FFFFFF; /* Ensuring text is visible by making it white */
+}
+
+.menu-list a, .footer-menu a, .view-btn, .section-title, .subscribe-title, .block-title, .card-title, .currency, .clients-name, .offcanvas-title, .btn-close-white:before {
+  color: #FFFFFF; /* Changing text color to white for visibility */
+}
+
+.btn-linear, .btn-outline-linear {
+  border-color: #FFFFFF; /* Changing button borders to white for visibility */
+}
+
+.btn-linear:hover, .btn-outline-linear:hover {
+  background-color: #FFFFFF; /* White background on hover */
+  color: #0A0F0D; /* Dark-Blue text on hover */
+}

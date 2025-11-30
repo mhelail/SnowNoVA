@@ -1,0 +1,29 @@
+User-agent: *
+Disallow: /administration-panel.html
+
+Allow: /index.html
+Allow: /Vulnerabilities/SQLi_Section.html
+Allow: /Vulnerabilities/Broken_Access_Control.html
+Allow: /Vulnerabilities/test.html
+Allow: /Vulnerabilities/Insecure_Design.html
+Allow: /Vulnerabilities/CryptographicFailures.html
+Allow: /Vulnerabilities/SecurityMisconfiguration.html
+Allow: /Vulnerabilities/Vul&OC.html
+Allow: /Vulnerabilities/Identification%20and%20Authentication%20Failures.html
+Allow: /Vulnerabilities/Security%20Logging%20And%20Monitoring%20Failures.html
+Allow: /Vulnerabilities/Software%20And%20Data%20Integrity%20Failures.html
+
+
+Allow: /login.html
+Allow: /signup.html
+Allow: 
+Allow: 
+Allow: 
+Allow: 
+Allow: 
+Allow: 
+Allow: 
+
+
+
+

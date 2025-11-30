@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <style>
+   .sql-section {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.sql-container {
+    display: flex;
+    gap: 20px;
+    width: 100%;  /* Ensure the container takes full width */
+}
+.sql-box {
+    flex-grow: 1;
+    background: #040318;
+    border: 1px solid #030202;
+    padding: 10px;
+    width: 600px;
+}
+
+.sql-header {
+    background: #022447;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+.sql-body {
+    padding: 10px;
+    background: rgb(18, 17, 26);
+    height: 150px; /* Adjust based on content */
+    overflow: auto;
+    font-family: monospace;
+}
+
+  </style>
+  
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="fonts/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="modified_style_based_on_logo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap"
+    rel="stylesheet">
+    
+  <script src="js/modernizr.js"></script>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  
+
+</head>
+
+<body class="bg-dark">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw;">
+    <header id="header">
+      <nav class="navbar navbar-expand-lg padding-small px-lg-4">
+        <div class="container-fluid ">
+
+          <div class="main-logo">
+            <a href="real_login.html">
+              <img src="images/SnowNoVa22222.png" alt="logo">
+            </a>
+          </div>
+
+          <button class="navbar-toggler mb-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <iconify-icon icon="system-uicons:menu-hamburger" class="hamburger-menu"></iconify-icon>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ">
+
+
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+    <form action="login.php" method="POST" class="bg-gray-800 dark:bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<div class="mb-4">
+    <label for="username" class="block text-blue-700 dark:text-zinc-700 py-2">
+        <i class="fas fa-user text-blue-700 dark:text-zinc-400"></i> Username
+    </label>
+    <input type="text" id="username" name="username" placeholder="Username"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 dark:text-zinc-300 leading-tight focus:outline-none focus:shadow-outline bg-blue-800 dark:bg-zinc-800 border-blue-500 dark:border-zinc-500">
+</div>
+<div class="mb-6">
+    <label for="password" class="block text-blue-300 dark:text-zinc-300 py-2">
+        <i class="fas fa-lock text-blue-700 dark:text-zinc-400"></i> Password
+    </label>
+    <input type="password" id="password" name="password" placeholder="***************"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-300 dark:text-zinc-300 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-800 dark:bg-zinc-800 border-blue-500 dark:border-zinc-500">
+</div>
+
+      <div class="flex items-center justify-center mt-6">
+    <button type="submit" class="btn btn-linear btn-medium ml-3">Log in</button> 
+</div>
+<div class="sql-section">
+    <div class="sql-container">
+        <div class="sql-box">
+            <div class="sql-header">SQL Query</div>
+            <div class="sql-body"><pre id="sqlQuery">select * from users where username='' and password='' LIMIT 1;</pre></div>
+        </div>
+        <div class="sql-box">
+            <div class="sql-header">SQL Results</div>
+            <div class="sql-body"><pre id="sqlResults"></pre></div>
+        </div>
+    </div>
+</div>
+
+    </form>
+     <div id="error-message" style="color: red; display: none; margin-top: 20px;">
+    Invalid credentials. Please try again.
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const sqlQueryDisplay = document.getElementById('sqlQuery');
+    const sqlResultsDisplay = document.getElementById('sqlResults');
+    const errorMessageDiv = document.getElementById('error-message');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    // Function to update SQL query display
+    function updateSqlDisplay() {
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+        sqlQueryDisplay.textContent = `SELECT * FROM users WHERE username='${username}' AND password='${password}' LIMIT 1;`;
+    }
+
+    // Attach event listeners to username and password inputs
+    usernameInput.addEventListener('input', updateSqlDisplay);
+    passwordInput.addEventListener('input', updateSqlDisplay);
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent normal form submission
+        errorMessageDiv.style.display = 'none'; // Hide previous errors
+
+        if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+            errorMessageDiv.textContent = 'Both username and password are required.';
+            errorMessageDiv.style.display = 'block';
+            return;
+        }
+
+        const formData = new FormData(form);
+        
+        fetch('login.php', {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                sqlResultsDisplay.textContent = data.results; // Display the results
+                sqlQueryDisplay.textContent = data.sql; // Update SQL query display
+                if (data.redirect) {
+                    window.location.href = data.redirect; // Redirect to the specified page
+                }
+            } else {
+                errorMessageDiv.textContent = data.message; // Display the error message
+                errorMessageDiv.style.display = 'block';
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+    // Initial call to update SQL display
+    updateSqlDisplay();
+});
+
+
+</script>
+
+
+
+
+
+</script>
+<script>
+
+</script>
+
+
+   <script>
+  
+
+
+
+
+
+      
+</script>
+
+
+</body>
+
+</html>

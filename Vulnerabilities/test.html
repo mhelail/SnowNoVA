@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>SnowNoVA</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .footer-item {
+      text-align: center;
+    }
+
+    .social-media ul {
+      justify-content: center;
+      padding: 0;
+    }
+
+    .social-media li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    #footer-bottom {
+      text-align: center;
+    }
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="fonts/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="modified_style_based_on_logo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap"
+    rel="stylesheet">
+
+  
+  <script src="js/modernizr.js"></script>
+
+    <script>
+
+      
+      function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          console.error("No section found with ID:", sectionId);
+        }
+      }
+    </script>
+
+
+</head>
+
+<body class="bg-dark">
+
+  <header id="header">
+    <nav class="navbar navbar-expand-lg padding-small px-lg-4">
+      <div class="container-fluid ">
+        <div class="main-logo">
+          <a href="/SnowNoVA/index.html">
+            <img src="images/SnowNoVa22222.png" alt="logo">
+          </a>
+        </div>
+
+        <button class="navbar-toggler mb-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <iconify-icon icon="system-uicons:menu-hamburger" class="hamburger-menu"></iconify-icon>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body ">
+            <div class="main-menu text-center d-lg-flex align-items-center">
+              <ul class="menu-list list-unstyled d-lg-flex m-0">
+                <li class="menu-item">
+                  <a class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section1'); return false;">XSS Kategorileri</a>
+                </li>
+
+                <li class="menu-item">
+                  <a class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section2'); return false;">XSS Simülatörü</a>
+                </li>
+
+                <li class="menu-item">
+                  <a class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section3'); return false;">Senaryo</a>
+                </li>
+
+                <li class="menu-item">
+                  <a  class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section4'); return false;">Zafiyetleri</a>
+                </li>
+
+
+              </ul>
+            </div>
+            <div class="btn-wrap d-flex my-4 my-lg-0 ">
+              <a href="login.html" class="btn btn-linear btn-medium">Giriş yap</a>
+              <a href="signin.html" class="btn btn-linear btn-medium">Üye Ol</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <body class="bg-dark">
+
+    <div class="text-center">
+
+
+    </div>
+
+    <script>
+    </script>
+
+
+    <div class="section-header align-center">
+      <h1 class="card-title">Cross-Site scripting (XSS)</h1>
+
+      <div id="accessControl" class="page active"> 
+        <br>
+        <p><strong>Açıklama:</strong> Siteler arası komut dosyası çalıştırma (XSS) saldırganların web sayfalarına
+          tehlikli betikler enjekte etmelerine olanak tanıyan bir istemci tarafı web güvenlik zafiyetidir.</p>
+        </br>
+                                                           
+        <div class="container">
+          <img src="images/xssP2.png" alt="XSS">
+        </div>
+
+            <div class="container">
+              <div class="row d-flex flex-wrap align-items-center">
+                <div class="section-header align-center">
+                  <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                    <h1 class="card-title">XSS Saldırıları:</h1>
+                  </div>
+                  <br>
+                  <h3 class="card-title">
+                    <ul>
+
+                      <li><strong>XSS zafiyeti genellikle web uygulamalarında girdi doğrulama eksikliğinden
+                          kaynaklanır.</strong></li>
+                      <li><strong>Saldırganlar, XSS zafiyetlerini zararlı kodları web uygulamalarına enjekte etmek için
+                          kullanırlar. XSS, istemci tarafı bir zafiyet olduğundan, bu betikler kurbanın tarayıcısı
+                          tarafından yürütülür.</strong></li>
+                      <li><strong>XSS zafiyetleri, giriş doğrulamasından yoksun olan ve Javascript, Flash, CSS gibi
+                          istemci tarafı betik dillerini kullanan web uygulamalarını etkiler</strong></li>
+
+                    </ul>
+                  </h3>
+                  </br>
+                </div>
+
+               
+                  <div class="container">
+                    <div class="row d-flex flex-wrap align-items-center">
+                      <div class="section-header align-center">
+                        <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                          <h1 class="card-title" id="section1">XSS kategorileri:</h1>
+                          <br>
+                          <h3 class="card-title">
+                            <ol>
+                              <li><strong>Stored XSS</strong></li>
+                              <li><strong>Reflected XSS</strong></li>
+                              <li><strong>DOM Tabanlı XSS</strong></li>
+                              </ul>
+                          </h3>
+                          </br>
+                        </div>
+                      </div>
+                    </div>
+                   
+                      <div class="container">
+                        <div class="row d-flex flex-wrap align-items-center">
+                          <div class="section-header align-center">
+                            <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                              <h1 class="card-title">1. Stored XSS</h1>
+                              <br>
+                              <p><strong>bir saldırganın, doğrulanmamış bir giriş aracılığıyla web uygulamasının
+                                  veritabanına veya kaynak koduna JavaScript kodu enjekte edebildiği bir zafiyettir.</p>
+                              <p><strong>- Örneğin, bir saldırganın uygun doğrulama yapılmadan bir web sayfasına zararlı
+                                  bir XSS yükü enjekte etmesi durumunda, bu web sayfasına ziyaret eden herhangi bir
+                                  kişinin tarayıcısı tarafından enjekte edilen XSS yükü yürütülecektir.</strong></p>
+                              </br>
+                              <img src="images/xssAnatomy6.png" alt="XSS">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                      <div class="container">
+                        <div class="row d-flex flex-wrap align-items-center">
+                          <div class="section-header align-center">
+                            <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                              <h1 class="card-title">2. Reflected XSS</h1>
+                              <br>
+                              <p><strong>Reflected/non-persistent cross-site scripting XSS'in en yaygın şeklidir ve bir
+                                  kurbanı, saldırıya açık bir web sitesine özel olarak oluşturulmuş bir bağlantıyı (XSS
+                                  yüküyle) tıklamaya kandırma işlemi içerir.</p>
+                              <p><strong>- Örneğin, Kurban bağlantıya tıkladığında, web sitesi yanıtının bir parçası
+                                  olarak XSS yükünü kurbanın tarayıcısına dahil eder ve yük çalıştırılır..</strong></p>
+                              </br>
+                              <img src="images/xssre5.png" alt="XSSRe">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                     
+                        <div class="container">
+                          <div class="row d-flex flex-wrap align-items-center">
+                            <div class="section-header align-center">
+                              <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                <h1 class="card-title">Potansiyel Etki:</h1>
+                                <br>
+                                <p><strong>Saldırgan, potansiyel kurbanlara JavaScript yükü içeren bağlantılar
+                                    gönderebilir veya bunları başka bir web sitesinde bir iframe'e gömebilir, böylece
+                                    kurbanları tarayıcılarında kod çalıştırmaya ikna edebilir ve potansiyel olarak
+                                    oturum veya müşteri bilgilerini ifşa edebilir.</p>
+                                </br>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        
+                          <div class="container">
+                            <div class="row d-flex flex-wrap align-items-center">
+                              <div class="section-header align-center">
+                                <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                  <h1 class="card-title" id="section2" >XSS simülatörü</h1>
+
+                                  
+                                  <p><strong>Simülatörü denemek için butona tıklayın.</p>
+                                  <br>
+                                  <a href="XSS.php" target="_blank" class="circle-shape">
+                                    <img src="images/button.png" alt="start button">
+                                  </a>
+                                  </br>
+
+
+
+
+                                  
+                                    <div class="container">
+                                      <div class="row d-flex flex-wrap align-items-center">
+                                        <div class="section-header align-center">
+                                          <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                            <h1 class="card-title" id="section3">Scenario:</h1>
+                                            <br>
+                                            <p><strong>Senaryomuzda, web sayfasında kullanıcıları isimlerini girmeye
+                                                davet eden
+                                                bir metin formu bulunmaktadır. Gönderildikten sonra, web sitesi "Hoş
+                                                geldiniz,
+                                                [kullanıcının adı]" gibi bir karşılama mesajı görüntüler.</p>
+                                            </br>
+                                            <img src="images/xssStep2.png" alt="Step2">
+                                            <img src="images/xssStep2_.png" alt="Step2">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                   
+                                      <div class="container">
+                                        <div class="row d-flex flex-wrap align-items-center">
+                                          <div class="section-header align-center">
+                                            <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                              <h1 class="card-title">Zafiyet:</h1>
+                                              <br>
+                                              <p><strong>XSS zafiyeti, web sitesinin kullanıcı girdisini sayfada
+                                                  görüntülemeden
+                                                  önce doğru bir şekilde doğrulaması gerektiği için
+                                                  meydana gelir.
+                                                  Bir kullanıcı ismini forma girdiğinde, web sitesi bu girdiyi doğrudan
+                                                  karşılama
+                                                  mesajına gömerek, potansiyel olarak kötü amaçlı içerikler için
+                                                  herhangi bir
+                                                  kontrol yapmadan işler.</p>
+                                              </br>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+                                      
+                                        <div class="container">
+                                          <div class="row d-flex flex-wrap align-items-center">
+                                            <div class="section-header align-center">
+                                              <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                                <h1 class="card-title">Sömürü:</h1>
+                                                <br>
+                                                <p><strong>Bir saldırgan, formda kötü amaçlı JavaScript kodu içeren bir
+                                                    isim
+                                                    gireerek bu zaafiyeti sömürebilir. Örneğin, "Muhammed" gibi düzenli
+                                                    bir isim
+                                                    yerine, saldırgan gibi bir şey girebilir
+                                                    <pre>"&lt;script&gt;alert("XSS_SnowNoVA");&lt;/script&gt;".</pre>
+                                                </p>
+                                                </br>
+                                                <img src="images/xssStep4_.png" alt="Step4">
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        
+                                          <div class="container">
+                                            <div class="row d-flex flex-wrap align-items-center">
+                                              <div class="section-header align-center">
+                                                <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                                  <h1 class="card-title">Uygulama:</h1>
+                                                  <br>
+                                                  <p><strong>Web sitesi karşılama mesajını görüntülerken, saldırganın
+                                                      girdisini
+                                                      HTML içeriğinin bir parçası olarak ekler. Sonuç olarak, tarayıcı,
+                                                      isim
+                                                      alanına gömülü olan JavaScript kodunu yorumlar ve çalıştırır. Bu
+                                                      durumda,
+                                                      bir uyarı ile "XSS_SnowNoVA" mesajını görüntüler.</p>
+                                                  </br>
+                                                  <img src="images/xssStep5.png" alt="Step5">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                            <div class="container">
+                                              <div class="row d-flex flex-wrap align-items-center">
+                                                <div class="section-header align-center">
+                                                  <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                                    <h1 class="card-title">Sonuçlar:</h1>
+                                                    <br>
+                                                    <p><strong>Bu zafiyet, saldırganların diğer kullanıcıların
+                                                        tarayıcılarının
+                                                        bağlamında keyfi JavaScript kodu enjekte etmelerine ve
+                                                        çalıştırmalarına
+                                                        olanak tanır. Saldırganın niyetine bağlı olarak, bu, oturum
+                                                        cookie
+                                                        çalma, kullanıcıları sahte web sitelerine yönlendirme veya
+                                                        kullanıcı
+                                                        hesaplarını ele geçirme gibi çeşitli kötü amaçlı eylemlere yol
+                                                        açabilir.
+                                                    </p>
+                                                    </br>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+
+                                          </div>
+
+                                          <section id="product-card" class="">
+                                            <div class="container">
+                                              <div class="row">
+                                                <div class="section-header text-center">
+                                                  <h2 class="section-title light" id="section4">Zafiyetleri</h2>
+                                                </div>
+                                                <div class="swiper product-swiper">
+                                                  <div class="swiper-wrapper">
+                                                    <div class="swiper-slide">
+                                                      <div class="product-item">
+                                                        <div class="image-holder">
+                                                          <img src="images/sqli.png" alt="collection"
+                                                            class="rounded-shape">
+                                                        </div>
+                                                        <div class="product-detail bg-light">
+                                                          <div
+                                                            class="card-header d-flex flex-wrap justify-content-between">
+                                                            <h3 class="card-title">SQLi (SQL Injection)</h3>
+                                                          </div>
+                                                          <div class="clients-detail">
+                                                            <img src="images/WOLF1.webp" alt="clients"
+                                                              class="circle-shape">
+                                                            <span class="clients-name">Muhammed Helail</span>
+                                                          </div>
+                                                          <div class="btn-card">
+                                                            <a href="SQLi_Section.html"
+                                                              class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Broken Access Control Logo.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Broken Access Control</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Broken_Access_Control.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/insecure.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Insecure Design</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Insecure_Design.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/encry-f.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Cryptographic Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="CryptographicFailures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/vuln3.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Outdated Components</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vul&OC.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Miscc2.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Security Misconfiguration</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="SecurityMisconfiguration.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Iden.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Authentication Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Identification and Authentication Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/mon.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Monitoring Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Security Logging And Monitoring Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Data integrety failures.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Data integrety failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Software And Data Integrity Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="swiper-pagination"></div>
+                                            </div>
+
+                                          </section>
+                                          <hr>
+                                          <div id="footer-bottom">
+                                            <div class="container">
+                                              <div class="row text-center">
+                                                <p>&copy; 2024 SnowNoVA. All rights reserved.</p>
+                                              
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <script src="js/jquery-1.11.0.min.js"></script>
+                                          <script
+                                            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                                            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                                            crossorigin="anonymous"></script>
+
+                                          <script
+                                            src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+                                          <script type="text/javascript" src="js/plugins.js"></script>
+                                          <script type="text/javascript" src="js/script.js"></script>
+                                          <script
+                                            src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </body>
+
+</html>

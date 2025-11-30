@@ -1,0 +1,21 @@
+# Dependencies / vendor
+vendor/
+node_modules/
+
+# Environment / secrets
+.env
+config.php
+db.php
+database.php
+config/*.php
+
+# Logs & temp
+*.log
+*.tmp
+*.bak
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

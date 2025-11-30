@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="fonts/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="modified_style_based_on_logo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <script src="js/modernizr.js"></script>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body class="bg-dark">
+  <div style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw;">
+    <header id="header">
+      <nav class="navbar navbar-expand-lg padding-small px-lg-4">
+        <div class="container-fluid ">
+
+          <div class="main-logo">
+            <a href="/index.html">
+              <img src="images/SnowNoVa22222.png" alt="logo">
+            </a>
+          </div>
+
+          <button class="navbar-toggler mb-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar">
+            <iconify-icon icon="system-uicons:menu-hamburger" class="hamburger-menu"></iconify-icon>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+              <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body ">
+
+
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </header>
+    <form action="real_login.php" method="POST" class="bg-gray-800 dark:bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label for="username" class="block text-blue-700 dark:text-zinc-700 py-2">
+          <i class="fas fa-user text-blue-700 dark:text-zinc-400"></i> Username
+        </label>
+        <input type="text" id="username" name="username" placeholder="Username"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-700 dark:text-zinc-300 leading-tight focus:outline-none focus:shadow-outline bg-blue-800 dark:bg-zinc-800 border-blue-500 dark:border-zinc-500">
+      </div>
+      <div class="mb-6">
+        <label for="password" class="block text-blue-300 dark:text-zinc-300 py-2">
+          <i class="fas fa-lock text-blue-700 dark:text-zinc-400"></i>password
+        </label>
+        <input type="password" id="password" name="password" placeholder="***************"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-blue-300 dark:text-zinc-300 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-blue-800 dark:bg-zinc-800 border-blue-500 dark:border-zinc-500">
+      </div>
+      <div class="flex items-center justify-between">
+        
+        
+      </div>
+      <div class="flex items-center justify-center mt-6">
+    <button type="submit" class="btn btn-linear btn-medium ml-3">Sign in</button> 
+</div>
+
+    </form>
+  </div>
+</body>
+<script>
+function useEncryptionKey() {
+    // Example encryption key, hardcoded insecurely
+    const encryptionKey = `-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+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
+-----END PGP PRIVATE KEY BLOCK-----`;
+
+
+}
+</script>
+
+</html>

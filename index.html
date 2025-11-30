@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>SnowNoVA</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .footer-item {
+      text-align: center;
+    }
+
+    .social-media ul {
+      justify-content: center;
+      padding: 0;
+    }
+
+    .social-media li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    #footer-bottom {
+      text-align: center;
+    }
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="fonts/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="modified_style_based_on_logo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- script
+    ================================================== -->
+  <script>
+    // Function to scroll to a specified section
+    function scrollToSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.error("No section found with ID:", sectionId);
+      }
+    }
+  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('form');
+      form.addEventListener('submit', function(event) {
+          event.preventDefault();  
+  
+          var formData = new FormData(form);
+          fetch('subscribe.php', {
+              method: 'POST',
+              body: formData
+          })
+          .then(response => response.text())
+          .then(data => {
+              alert(data);  
+          })
+          .catch(error => {
+              console.error('Error:', error);
+              alert('An error occurred while submitting the form.');
+          });
+      });
+  });
+  </script>
+
+</head>
+
+<body class="bg-dark">
+
+  <header id="header">
+    <nav class="navbar navbar-expand-lg padding-small px-lg-4">
+      <div class="container-fluid ">
+
+        <div class="main-logo">
+          <a href="index.html">
+            <img src="images/SnowNoVa22222.png" alt="logo">
+          </a>
+        </div>
+
+        
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body ">
+            <div class="main-menu text-center d-lg-flex align-items-center">
+              <ul class="menu-list list-unstyled d-lg-flex m-0">
+                <li class="menu-item">
+                  <a  class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section2'); return false;">Zafiyetleri</a>
+                </li>
+
+                <li class="menu-item">
+                  <a  class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section1'); return false;">Takım Üyeleri</a>
+                </li>
+
+                <li class="menu-item">
+                  <a  class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section3'); return false;">Abonelik</a>
+                </li>
+
+                <li class="menu-item">
+                  <a  class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section4'); return false;">Araçlar</a>
+                </li>
+
+                <li class="menu-item">
+                  <a  class="item-anchor" data-effect="Shop"
+                    onclick="scrollToSection('section5'); return false;">Referanslar</a>
+                </li>
+
+
+              </ul>
+            </div>
+            <div class="btn-wrap d-flex my-4 my-lg-0 ">
+              <a href="login.html" class="btn btn-linear btn-medium">Giriş yap</a>
+              <a href="signup.html" class="btn btn-linear btn-medium">Üye ol</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+  <div id="billboard" class="padding-large overflow-hidden">
+    <div class="container">
+      <div class="row d-flex flex-wrap align-items-center">
+        <div class="col-md-7 col-sm-8">
+          <div class="banner-content content-light m-0 mt-5 mt-md-0">
+            <h1 class="banner-title m-0">Daha Güvenli Sanal Dünya İçin.</h1>
+            <p class="grey">SnowNoVA, OWASP Top 10 güvenlik zafiyetlerini simüle etmek ve analiz etmek için tasarlanmış
+              bir web uygulamasıdır. Kullanıcıların bu zafiyetleri interaktif olarak keşfetmelerine, tespit, istismar ve
+              önleme stratejileri hakkında pratik içgörüler kazanmalarına olanak tanır. SnowNoVA, web güvenlik
+              risklerini anlamanın ve hafifletmenin önemini vurgular ve gerçek dünya senaryolarında güçlü güvenlik
+              uygulamalarının entegrasyonunu teşvik eder.</p>
+            <div class="btn-wrap d-flex flex-wrap">
+              <a href="Vulnerabilities/SQLi_Section.html" class="btn btn-linear btn-medium mt-3">Başla</a>
+              <a href="https://owasp.org/www-project-top-ten/" target="_blank"
+                class="btn btn-linear btn-medium mt-3">OWASP nedir </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-8">
+          <div class="image-holder">
+            <img src="images/snownocacyrcle.png" alt="banner" class="banner-image img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <section id="product-card" class="">
+    <div class="container">
+      <div class="row">
+        <div class="section-header text-center" id="section2">
+          <h2 class="section-title light">Zafiyetleri</h2>
+        </div>
+        <div class="swiper product-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/sqli.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">SQLi (SQL Injection)</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/SQLi_Section.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Broken.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Broken Access Control</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/Broken_Access_Control.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/xss1.jpg" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">XSS (Cross-Site Scripting)</h3>
+
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/test.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/insecure.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Insecure Design</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/Insecure_Design.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/encry-f.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Cryptographic Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/CryptographicFailures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/vuln3.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Outdated Components</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/Vul&OC.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Miscc2.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Security Misconfiguration</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/SecurityMisconfiguration.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Iden.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Authentication Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/Identification and Authentication Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/mon.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Monitoring Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/Security Logging And Monitoring Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Data integrety failures.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Data integrety failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vulnerabilities/Software And Data Integrity Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  <section id="top-creators" class="padding-large">
+    <div class="container">
+      <div class="row">
+
+        <div class="section-header align-center" id="section1">
+          <h2 class="section-title light">Takım Üyeleri</h2>
+          <p>Bu projede (SnowNoVA) tutkuyla çalışan ve OWASP Top 10 zafiyetlerini basitleştirmeye ve simüle etmeye büyük
+            çaba gösteren ekip.</p>
+        </div>
+
+        <div class="product-content overflow-hidden">
+          <div class="row d-flex flex-wrap">
+            <div class="col-md-4 col-sm-6">
+              <div class="product-item bg-blue-trans border-rounded">
+                <div class="product-detail text-center">
+                  <div class="clients-detail">
+                    <img src="images/WOLF2.webp" alt="clients" class="circle-shape">
+                  </div>
+                  <h3 class="block-title">Muhammed Helail</h3>
+                  <div class="btn-card">
+                    <a href="resumes/muhammed_resume.html" class="btn btn-linear btn-rounded btn-medium">Özgeçmiş</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="product-item bg-blue-trans border-rounded">
+                <div class="product-detail text-center">
+                  <div class="clients-detail">
+                    <img src="images/fox.webp" alt="clients" class="circle-shape">
+                  </div>
+                  <h3 class="block-title">Edrees Tamer</h3>
+                  <div class="btn-card">
+                    <a href="resumes/edrees_resume.html" class="btn btn-linear btn-rounded btn-medium">Özgeçmiş</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="product-item bg-blue-trans border-rounded">
+                <div class="product-detail text-center">
+                  <div class="clients-detail">
+                    <img src="images/Eagle1.png" alt="clients" class="circle-shape">
+                  </div>
+                  <h3 class="block-title">Sami Awawda</h3>
+                  <div class="btn-card">
+                    <a href="resumes/sami_resume.html" class="btn btn-linear btn-rounded btn-medium">Özgeçmiş</a>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="subscribe" class=" pattern-circle">
+    <div class="pattern-overlay">
+      <img src="images/pattern-overlay.png" alt="pattern-overlay">
+    </div>
+    <div class="container">
+      <div class="row d-flex flex-wrap justify-content-center">
+        <div class="col-md-6" id="section3">
+          <div class="image-holder">
+            <img src="images/subFinal.webp" alt="single image" class="circle-shape">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="subscribe-content">
+            <div class="subscribe-header">
+              <h3 class="subscribe-title light">SnowNoVA hakkında en güncel haberleri almak İçin abone olun.</h3>
+              <p>SnowNoVA ile web güvenliği dalgalarında yol alın! Web zafiyetlerini keşfetmek ve bunlara karşı korunmak
+                için tasarlanmış interaktif haritamızda maceranıza başlayın. Dijital krallığınızı güvenle koruyacak
+                becerileri kazanın. SnowNoVA ile sadece öğrenmekle kalmayacak, siber savunmanın temellerini ustalıkla
+                öğreneceksiniz. Bu heyecan verici yolculuğa çıkın ve web güvenliği şampiyonu olun!</p>
+            </div>
+            <form id="form" action="subscribe.php" method="post"
+              class="d-flex justify-content-between bg-blue-trans rounded-3">
+              <input type="text" name="email" placeholder="E-postanızı yazın"
+                class="btn-rounded w-100 content-dim-light align-self-center bg-transparent border-0">
+              <button type="submit" class="btn btn-linear btn-medium rounded-0">Abone Olun</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="nft-collection" class="padding-large">
+    <div class="container">
+      <div class="row overflow-hidden">
+        <div class="section-header align-center" id="section4">
+          <h2 class="section-title light">Araçlar</h2>
+          <p>Daha iyi bir deneyim için bu araçları indirmenizi tavsiye ederiz.</p>
+        </div>
+        <div class="product-content">
+          <div class="row">
+            <div class="col-md-4 col-sm-7">
+              <div class="product-item bg-blue-trans border-rounded-pill">
+                <div class="product-detail text-center">
+                  <div class="clients-detail">
+                    <img src="images/burp2.jpg" alt="clients" class="circle-shape">
+                  </div>
+                  <h3 class="block-title">Burp Suite</h3>
+                  <div class="btn-card">
+                    <a href="https://portswigger.net/burp/communitydownload" class="view-btn">indir</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-7">
+              <div class="product-item bg-blue-trans border-rounded-pill">
+                <div class="product-detail text-center">
+                  <div class="clients-detail">
+                    <img src="images/kleopatra.jpg" alt="clients" class="circle-shape">
+                  </div>
+                  <h3 class="block-title">Kleopatra</h3>
+                  <div class="btn-card">
+                    <a href="https://gpg4win.org/thanks-for-download.html" class="view-btn">indir</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-7">
+              <div class="product-item bg-blue-trans border-rounded-pill">
+                <div class="product-detail text-center">
+                  <div class="clients-detail">
+                    <img src="images/netcat1.jpg" alt="clients" class="circle-shape">
+                  </div>
+                  <h3 class="block-title">Netcat</h3>
+                  <div class="btn-card">
+                    <a href="https://nmap.org/ncat/" class="view-btn">indir</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <section id="blog" class="padding-large">
+    <div class="container">
+      <div class="row overflow-hidden" id="section5">
+        <div class="section-header d-md-flex justify-content-between ">
+          <h2 class="section-title light">Referanslar</h2>
+
+        </div>
+        <div class="product-content">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="product-item bg-blue-trans p-3 rounded-1 mb-3 ">
+                <div class="product-detail">
+                  <div class="clients-detail">
+                    <a href="https://tryhackme.com/"> <img src="images/tryhackme.png" alt="clients"> </a>
+                  </div>
+
+                  <a href="blog-single.html">
+                    <h3 class="block-title">TryHackMe</h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="product-item bg-blue-trans p-3 rounded-1 mb-3 ">
+                <div class="product-detail">
+                  <div class="clients-detail">
+                    <a href="https://portswigger.net/web-security/all-labs"> <img src="images/PortSwigger.png"
+                        alt="clients"> </a>
+                  </div>
+                  <div class="btn-card">
+                    <a href="https://portswigger.net/web-security/all-labs" class="view-btn">
+
+                    </a>
+                  </div>
+                  <a href="https://portswigger.net/web-security/all-labs">
+                    <h3 class="block-title"> PortSwigger </h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="product-item bg-blue-trans p-3 rounded-1 mb-3 ">
+                <div class="product-detail">
+                  <div class="clients-detail">
+                    <a href="https://hackersploit.org"> <img src="images/hackerSploit.jpg" alt="clients"> </a>
+                  </div>
+                  <div class="btn-card">
+                    <a href="https://hackersploit.org" class="view-btn"></a>
+                  </div>
+                  <a href="https://hackersploit.org">
+                    <h3 class="block-title">HackerSploit</h3>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="product-item bg-blue-trans p-3 rounded-1 mb-3 ">
+                <div class="product-detail">
+                  <div class="clients-detail">
+                    <a href="https://www.hackthebox.com/"> <img src="images/hackthebox.jpg" alt="clients"> </a>
+                  </div>
+                  <div class="btn-card">
+                    <a href="https://www.hackthebox.com/" class="view-btn"></a>
+                  </div>
+                  <a href="https://www.hackthebox.com/">
+                    <h3 class="block-title">HackTheBox </h3>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="nft-collection" class="padding-large">
+    <div class="container">
+      <div class="row overflow-hidden">
+        <div class="section-header align-center">
+          <img src="images/SnowNoVa22222.png" alt="logo">
+          <div class="container">
+            <div class="row d-flex justify-content-center"> <!-- Flexbox utility to center the columns -->
+              <div class="col-lg-6 col-md-0">
+                <div class="footer-item item-001">
+
+                  <p>Bizi sosyal medyada takip edin.</p>
+                  <div class="social-media">
+                    <ul class="d-flex list-unstyled">
+                      <li class="bg-blue-trans border-rounded-circle">
+                        <a href="https://www.facebook.com/OWASPFoundation"  target="_blank">
+                          <i class="icon icon-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="bg-blue-trans border-rounded-circle">
+                        <a href="https://twitter.com/owasp"  target="_blank">
+                          <i class="icon icon-twitter"></i>
+                        </a>
+                      </li>
+                      
+                      <li class="bg-blue-trans border-rounded-circle">
+                        <a href="https://www.youtube.com/user/OWASPGLOBAL" target="_blank">
+                          <i class="icon icon-youtube"></i>
+                        </a>
+                      </li>
+                      <li class="bg-blue-trans border-rounded-circle">
+                        <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEfvtcPwxeYTwAAAY9SRSvAFUn7J2BmUnCKvs4biLSfbwyf_7GM9UX4QhEHS0RPJvTYnodvl2_c1EtWjrGOcsD5HXIoGxllyJpLNBAMtAP_iLWU8OKGwvFeMgcq2m0yU0xijgM=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fowasp%2F"  target="_blank">
+                          <i class="icon icon-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  </section>
+  <ul>
+
+
+    <hr>
+    <div id="footer-bottom">
+      <div class="container">
+        <div class="row text-center">
+          <p>&copy; 2024 SnowNoVA. All rights reserved.</p> <!-- Example footer bottom content -->
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
+</html>

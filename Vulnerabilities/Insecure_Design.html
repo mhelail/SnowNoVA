@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Insecure Design</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .footer-item {
+      text-align: center;
+    }
+
+    .social-media ul {
+      justify-content: center;
+      padding: 0;
+    }
+
+    .social-media li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    #footer-bottom {
+      text-align: center;
+    }
+
+    
+    
+
+</style>
+
+
+
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="fonts/icomoon.css">
+  <link rel="stylesheet" type="text/css" href="modified_style_based_on_logo.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800;900&display=swap"
+    rel="stylesheet">
+
+  
+  <script src="js/modernizr.js"></script>
+  <script>
+    
+    function scrollToTeamMembers() {
+      var section = document.getElementById("teamMembersSection");
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+<script>
+  
+  function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.error("No section found with ID:", sectionId);
+    }
+  }
+</script>
+
+
+
+
+</head>
+
+<body class="bg-dark">
+
+    <header id="header">
+        <nav class="navbar navbar-expand-lg padding-small px-lg-4">
+          <div class="container-fluid ">
+            <div class="main-logo">
+              <a href="/SnowNoVA/index.html">
+                <img src="images/SnowNoVa22222.png" alt="logo">
+              </a>
+            </div>
+
+            <button class="navbar-toggler mb-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar">
+              <iconify-icon  class=""></iconify-icon>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel"></h5>
+                <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                  aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body ">
+                <div class="main-menu text-center d-lg-flex align-items-center">
+                  <ul class="menu-list list-unstyled d-lg-flex m-0">
+                   
+    
+                    <li class="menu-item">
+                      <a class="item-anchor" data-effect="Shop"
+                        onclick="scrollToSection('section1'); return false;">Nasıl Önlenir?</a>
+                    </li>
+    
+                    <li class="menu-item">
+                      <a  class="item-anchor" data-effect="Shop"
+                        onclick="scrollToSection('section5'); return false;">Riskler</a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a  class="item-anchor" data-effect="Shop"
+                          onclick="scrollToSection('section3'); return false;">Simülatörü</a>
+                      </li>
+    
+                    
+    
+    
+                  </ul>
+                </div>
+                <div class="btn-wrap d-flex my-4 my-lg-0 ">
+                  <a href="login.html" class="btn btn-linear btn-medium">Giriş yap</a>
+                  <a href="signin.html" class="btn btn-linear btn-medium">Üye Ol</a>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+        </nav>
+      </header>
+
+      <div class="section-header align-center">
+        <h1 class="card-title">Insecure Design:</h1>
+  
+        <div id="accessControl" class="page active"> 
+          <br>
+          <p><strong>Açıklama:</strong> Çoğu zaman bu güvenlik açıkları, uygulamanın planlama aşamalarında uygun olmayan bir tehdit modellemesi 
+            yapıldığında ortaya çıkar ve son uygulamanıza kadar yayılır. Bazı durumlarda, testlerini kolaylaştırmak için kodun çevresine bazı "kısayollar" 
+            eklerken geliştiriciler tarafından güvenli olmayan tasarım açıkları da ortaya çıkarılabilir.</p>
+          </br>
+          
+          <div class="container">
+            <img src="images/insecureDesign1.jpg" alt="ID1">
+          </div>
+        </div>
+      </div>
+
+      <div class="subpointssection-header align-center">
+       
+          <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+              <div class="section-header align-center" id = "section1">
+                <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                  <h1 class="card-title"><strong>Nasıl Önlenir</strong></h1>
+                </div>
+                <img src="images/ID_2.jpg" alt="ID2">
+                <p>Yukarıdaki saldırı senaryosunda, saldırgan, girişi düzgün şekilde filtrelemeyen, kötü tasarlanmış bir API'den yararlanır.</p>
+                <br>
+                <h3 class="card-title">
+                    <ul>
+
+                        <li><strong>1-	Saldırgan, güvenlik açığı bulunan API'leri tarar ve girişi düzgün şekilde filtrelemeyen ve kuruluşun API güvenlik ağ geçidini kullanmayan bir API belirler.</strong></li>
+                        <li><strong>2-	Saldırgan, güvenlik açığı bulunan API'ye kötü amaçlı bir komut dosyası enjekte eder.</strong></li>
+                        <li><strong>3-	Kurbanın tarayıcısı uygulama aracılığıyla API'ye erişir.</strong></li>
+                        <li><strong>4-	Tarayıcı, içeriği kötü amaçlı komut dosyasıyla yükler.</strong></li>
+  
+                      </ul>
+                  
+                </h3>
+                </br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subpointssection-header align-center">
+        
+          <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+              <div class="section-header align-center" id = "section5">
+                <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                  <h1 class="card-title"><strong>Riskler</strong></h1>
+                </div>
+                <br>
+                <h3 class="card-title">
+                  <ul>
+
+                    <li>Güvenlik İhlalleri: Savunmasız bileşenler, saldırganlar tarafından sistemlere veya verilere yetkisiz erişim sağlamak için kullanılabilir.</strong></li>
+                    <li>Veri Kaybı veya Bozulması.</strong></li>
+                    <li>Gizlilik Kaybı.</strong></li>
+
+                  </ul>
+                </h3>
+                </br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        
+            <div class="container">
+              <div class="row d-flex flex-wrap align-items-center">
+                <div class="section-header align-center" id = "section3">
+                  <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                    <h1 class="card-title"><strong>Insecure Design simülatörü</strong></h1>
+
+                    
+                    <p><strong>Simülatörü denemek için butona tıklayın.</p>
+                    <br>
+                    <a href="Insecure_Design_Simu.html" target="blank" class="circle-shape">
+                      <img src="images/button.png" alt="start button">
+                    </a>
+                    </br>
+
+                    
+                        <div class="container">
+                          <div class="row d-flex flex-wrap align-items-center">
+                            <div class="section-header align-center">
+                              <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                <h1 class="card-title"><strong>Scenario</strong></h1>
+                                <br>
+                                <p><strong>Bu senaryoda normal giriş sayfasına gireceksiniz. Bu sayfada geliştiriciler tarafından yanlış yerleştirilmiş kod var, 
+                                    inceleme sayfasını "inspect" kullanarak bu hatayı arayacak ve normal şekilde giriş yapacaksınız.</p>
+                                </br>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <br>
+                          
+                        <img src="images/ID_33.jpg" alt="ID3">
+                                        
+                      </br>
+
+                                        <br>
+                                        <p>Farenin sağ tuşuna veya <strong>"F12"</strong> ye tıklayarak inceleme açısını bulun.</p>
+                    </br>
+                                        <br>
+                                        <img src="images/ID_44.jpg" alt="ID4"> 
+                                    </br>
+                                    <br>
+
+                                          <img src="images/ID_55.jpg" alt="ID5">
+                                        </br>
+                                        
+
+                                        
+                                            <div class="container">
+                                              <div class="row d-flex flex-wrap align-items-center">
+                                                <div class="section-header align-center">
+                                                  <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                                    <h1 class="card-title"><strong>Sömürü</strong></h1>
+                                                    <br>
+                                                    <p><strong>Kullanıcı bu güvenlik açığından yararlanarak 
+                                                        sitenin dosyalarını arayarak kullanıcı adını ve kodu öğrenebilir.
+                                                    </p>
+                                                    </br>
+                                                    <img src="images/ID_66.jpg" alt="ID6">
+                                                    <img src="images/ID_77.jpg" alt="ID7">
+                                        
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                          
+
+                                          
+                                        
+
+                                          <img src="images/ID_88.jpg" alt="ID8">
+                                        </br>
+
+                                        
+                                            <div class="container">
+                                              <div class="row d-flex flex-wrap align-items-center">
+                                                <div class="section-header align-center">
+                                                  <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                                    <h1 class="card-title"><strong>Uygulama</strong></h1>
+                                                    <br>
+                                                    <p>Bu hoş geldiniz mesajı, eyleme bağlı olarak bu güvenlik açığını kullandığınızı belirten mesajı görüntüler ve bir uyarı gösterilir: 
+                                                        <strong>"Tebrikler! Güvenli Olmayan Tasarım Güvenlik Açığı'nı uyguladınız "</strong></p>
+                                                    </br>
+                                                    <img src="images/ID_99.jpg" alt="ID9">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            
+                                            
+                                                <div class="container">
+                                                  <div class="row d-flex flex-wrap align-items-center">
+                                                    <div class="section-header align-center" id = "section1">
+                                                      <div class="banner-content content-light m-0 mt-5 mt-md-0">
+                                                        <h1 class="card-title"><strong>Sonuçlar</strong></h1>
+                                                        <br>
+                                                        <h3 class="card-title">
+                                                          <p>Güvensiz tasarım zafiyeti, sistemin genel mimarisinde veya tasarımında eksikliklerden kaynaklanarak hassas verilere veya işlevlere izinsiz erişime yol açabilir. Saldırganlar, bu zayıflıkları kullanarak izinsiz erişim elde edebilir ve bu da veri sızıntılarına, mali kayıplara ve kuruluşun itibarına zarar verebilir. Güçlü kimlik doğrulama ve yetkilendirme mekanizmalarını uygulamak gibi uygun tasarım prensipleri, güvensiz tasarım zafiyetlerinin riskini azaltmak için hayati öneme sahiptir.
+
+
+
+
+
+
+                                                          </p>
+                                                        </h3>
+                                                        </br>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+
+                                                <section id="product-card" class="">
+                                                    <div class="container">
+                                                      <div class="row">
+                                                        <div class="section-header text-center" id="section5">
+                                                          <h2 class="section-title light">Zafiyetleri</h2>
+                                                        </div>
+                                                        <div class="swiper product-swiper">
+                                                          <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                              <div class="product-item">
+                                                                <div class="image-holder">
+                                                                  <img src="images/sqli.png" alt="collection"
+                                                                    class="rounded-shape">
+                                                                </div>
+                                                                <div class="product-detail bg-light">
+                                                                  <div
+                                                                    class="card-header d-flex flex-wrap justify-content-between">
+                                                                    <h3 class="card-title">SQLi (SQL Injection)</h3>
+                                                                  </div>
+                                                                  <div class="clients-detail">
+                                                                    <img src="images/WOLF1.webp" alt="clients"
+                                                                      class="circle-shape">
+                                                                    <span class="clients-name">Muhammed Helail</span>
+                                                                  </div>
+                                                                  <div class="btn-card">
+                                                                    <a href="SQLi_Section.html"
+                                                                      class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Broken Access Control Logo.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Broken Access Control</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Broken_Access_Control.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/xss1.jpg" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Cross-Site Scripting</h3>
+
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="test.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/encry-f.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Cryptographic Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="CryptographicFailures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/vuln3.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Outdated Components</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/fox22.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Edrees Tamer</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Vul&OC.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+             <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Miscc2.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Security Misconfiguration</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/WOLF1.webp" alt="clients" class="circle-shape">
+                    <span class="clients-name">Muhammed Helail</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="SecurityMisconfiguration.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Iden.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Authentication Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Identification and Authentication Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/mon.png" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Monitoring Failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Security Logging And Monitoring Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product-item">
+                <div class="image-holder">
+                  <img src="images/Data integrety failures.webp" alt="collection" class="rounded-shape">
+                </div>
+                <div class="product-detail bg-light">
+                  <div class="card-header d-flex flex-wrap justify-content-between">
+                    <h3 class="card-title">Data integrety failures</h3>
+                  </div>
+                  <div class="clients-detail">
+                    <img src="images/Eagle2.png" alt="clients" class="circle-shape">
+                    <span class="clients-name">Sami Awawda</span>
+                  </div>
+                  <div class="btn-card">
+                    <a href="Software And Data Integrity Failures.html" class="btn btn-linear btn-full btn-rounded btn-medium">Hemen Öğren</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <div class="swiper-pagination"></div>
+                                                    </div>
+        
+                                                  </section>
+                                                  <hr>
+                                                  <div id="footer-bottom">
+                                                    <div class="container">
+                                                      <div class="row text-center">
+                                                        <p>&copy; 2024 SnowNoVA. All rights reserved.</p>
+                                                        
+                                                      </div>
+                                                    </div>
+                                                  </div>
+        
+                                                  <script src="js/jquery-1.11.0.min.js"></script>
+                                                  <script
+                                                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                                                    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                                                    crossorigin="anonymous"></script>
+        
+                                                  <script
+                                                    src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+                                                  <script type="text/javascript" src="js/plugins.js"></script>
+                                                  <script type="text/javascript" src="js/script.js"></script>
+                                                  <script
+                                                    src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+                                            
+                                        
+                                        
+                                                                  
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
