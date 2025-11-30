@@ -33,7 +33,6 @@ It runs locally on XAMPP and shows simple vulnerable examples next to more secur
 3. Create the database in MySQL:  
    - Go to `http://localhost/phpmyadmin`  
    - Create a database (e.g. `snow_nova`)  
-   - Import the SQL file used by the project (if provided).
 
 4. Update the database config in the project:  
    - Open the PHP config file that holds the connection details (e.g. `config.php` or `config/db.php`)  
